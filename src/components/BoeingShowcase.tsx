@@ -10,14 +10,6 @@ const BoeingShowcase = () => {
     transition: { duration: 0.6 }
   };
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4">

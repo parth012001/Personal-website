@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import HeroSection from '@/components/HeroSection';
 import EducationSection from '@/components/EducationSection';
 import KalyxaShowcase from '@/components/KalyxaShowcase';
@@ -87,10 +85,10 @@ export default function Home() {
             {/* Section Header */}
             <div className="text-center mb-16">
               <h2 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                Let's Connect
+                Let&apos;s Connect
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Whether you're interested in collaboration, opportunities, or just want to say hello, I'm always excited to connect with fellow developers and innovators.
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Showcasing innovative solutions that combine technical excellence with user-centric design.
               </p>
             </div>
 
