@@ -12,6 +12,17 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <EducationSection />
+
+      {/* Professional Experience Heading */}
+      <div className="py-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+          Professional Experience
+        </h2>
+        <p className="text-center text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+          The following sections highlight my most impactful roles—leading Kalyxa as a tech founder and building advanced UAV systems at Boeing.
+        </p>
+      </div>
+
       <KalyxaShowcase />
       <BoeingShowcase />
       <ProjectsShowcase />
