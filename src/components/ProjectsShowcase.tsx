@@ -5,15 +5,16 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 const ProjectsShowcase = () => {
+  const [mounted, setMounted] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Simulated image arrays for each project
   const applyFlowImages = [
-    '/placeholder-applyflow-1.jpg',
-    '/placeholder-applyflow-2.jpg',
-    '/placeholder-applyflow-3.jpg',
-    '/placeholder-applyflow-4.jpg',
-    '/placeholder-applyflow-5.jpg',
+    { src: '/Applyflow-pictures/a.png', alt: 'ApplyFlow Screenshot 1' },
+    { src: '/Applyflow-pictures/b.png', alt: 'ApplyFlow Screenshot 2' },
+    { src: '/Applyflow-pictures/c.png', alt: 'ApplyFlow Screenshot 3' },
+    { src: '/Applyflow-pictures/d.png', alt: 'ApplyFlow Screenshot 4' },
+    { src: '/Applyflow-pictures/e.png', alt: 'ApplyFlow Screenshot 5' },
   ];
 
   const elevatrImages = [
@@ -24,13 +25,17 @@ const ProjectsShowcase = () => {
     '/placeholder-elevatr-5.jpg',
   ];
 
+  useEffect(() => { setMounted(true); }, []);
   useEffect(() => {
+    if (!mounted) return;
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5);
-    }, 3000); // Change image every 3 seconds
+    }, 5000); // Change image every 5 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [mounted]);
+
+  if (!mounted) return null;
 
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
@@ -63,9 +68,26 @@ const ProjectsShowcase = () => {
           >
             <div className="relative h-[400px] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 z-10" />
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">ApplyFlow Screenshot {currentImageIndex + 1}</p>
-              </div>
+              <motion.div
+                key={applyFlowImages[currentImageIndex].src}
+                initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.98, x: -10 }}
+                transition={{ 
+                  duration: 1.2,
+                  ease: "easeInOut",
+                  opacity: { duration: 0.8 }
+                }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <Image
+                  src={applyFlowImages[currentImageIndex].src}
+                  alt={applyFlowImages[currentImageIndex].alt}
+                  fill
+                  className="object-contain rounded-2xl transition-opacity duration-1000"
+                  sizes="(max-width: 768px) 100vw, 600px"
+                />
+              </motion.div>
             </div>
             <div className="p-8">
               <div className="flex items-center gap-4 mb-6">
