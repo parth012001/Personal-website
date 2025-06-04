@@ -185,7 +185,7 @@ const HeroSection = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8"
+          className="mb-8 mt-16"
         >
           <div className="relative w-32 h-32 mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 animate-pulse"></div>
@@ -208,15 +208,17 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h1 className="flex items-center justify-center gap-4 text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+          <div className="flex justify-center mb-4">
             <Image
               src="/penn_stateLOGO.png"
               alt="Penn State Logo"
-              width={72}
-              height={72}
-              className="inline-block w-16 h-16 md:w-20 md:h-20 object-contain rounded"
+              width={90}
+              height={90}
+              className="inline-block w-24 h-24 md:w-28 md:h-28 object-contain rounded"
               priority
             />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
             Parth Ahir
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
@@ -255,7 +257,7 @@ const HeroSection = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-12"
+          className="mb-20"
         >
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 tracking-wider uppercase font-medium">Tech Stack</p>
           <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
@@ -289,31 +291,6 @@ const HeroSection = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-
-        {/* CTA Buttons */}
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex gap-4 justify-center"
-        >
-          <Link 
-            href="#experience" 
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg 
-              hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105
-              shadow-lg hover:shadow-xl"
-          >
-            View Experience
-          </Link>
-          <Link 
-            href="#projects" 
-            className="px-8 py-4 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-white rounded-lg 
-              hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105
-              backdrop-blur-sm"
-          >
-            See Projects
-          </Link>
         </motion.div>
       </motion.div>
       
