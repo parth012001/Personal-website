@@ -189,13 +189,13 @@ const HeroSection = () => {
         >
           <div className="relative w-32 h-32 mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-lg opacity-50 animate-pulse"></div>
-            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/20">
+            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/20 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
               <Image
-                src="/profile.jpg"
+                src="/linkedin.JPG"
                 alt="Parth Ahir"
                 width={128}
                 height={128}
-                className="object-cover"
+                className="object-cover object-center w-full h-full"
                 priority
               />
             </div>
