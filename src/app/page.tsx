@@ -58,8 +58,18 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4">
+      <section id="contact" className="relative py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+        </div>
+
+        {/* Top Border */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-16">
@@ -76,7 +86,7 @@ export default function Home() {
               {/* Email Card */}
               <a 
                 href="mailto:p.ahiir01@gmail.com"
-                className="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group relative overflow-hidden bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <div className="p-8 flex items-start space-x-6">
@@ -106,7 +116,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/parth-ahir/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group relative overflow-hidden bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0077B5] to-[#00A0DC] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <div className="p-8 flex items-start space-x-6">
@@ -136,7 +146,7 @@ export default function Home() {
                 href="https://x.com/ParthSAhir"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group relative overflow-hidden bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-gray-800 dark:from-white dark:to-gray-200 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <div className="p-8 flex items-start space-x-6">
@@ -166,7 +176,7 @@ export default function Home() {
                 href="https://www.producthunt.com/@parth_ahir"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group relative overflow-hidden bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#DA552F] to-[#FF6B4A] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 <div className="p-8 flex items-start space-x-6">
@@ -201,7 +211,6 @@ export default function Home() {
                 <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
                   Open to Work
                 </span>
-                
               </div>
             </div>
           </div>
