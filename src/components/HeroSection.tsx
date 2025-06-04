@@ -63,43 +63,51 @@ const stats = [
     label: "Company Founded",
     icon: "🚀",
     color: "from-blue-500 to-blue-600",
-    position: "top-10 left-10"
+    position: "top-24 left-32"
   },
   {
     value: "180+",
     label: "Active Users",
     icon: "👥",
     color: "from-purple-500 to-purple-600",
-    position: "top-20 right-16"
-  },
-  {
-    value: "9",
-    label: "Projects Shipped",
-    icon: "📦",
-    color: "from-orange-500 to-orange-600",
-    position: "bottom-10 right-24"
+    position: "top-24 right-32"
   },
   {
     value: "Boeing",
     label: "Worked on a UAV with Boeing",
     icon: "🛩️",
     color: "from-blue-400 to-blue-700",
-    position: "top-1/2 left-4"
+    position: "top-1/2 -translate-y-1/2 left-16"
+  },
+  {
+    value: "9",
+    label: "Projects Shipped",
+    icon: "📦",
+    color: "from-orange-500 to-orange-600",
+    position: "top-1/2 -translate-y-1/2 right-16"
   },
   {
     value: "6",
-    label: "Websites Created (Best UI/UX)",
+    label: "Websites Created (with amazing UI/UX)",
     icon: "🎨",
     color: "from-pink-500 to-pink-600",
-    position: "top-1/3 right-4"
+    position: "bottom-32 left-32"
   },
   {
     value: "4",
     label: "Products Solving Real Problems",
     icon: "💡",
     color: "from-yellow-400 to-yellow-600",
-    position: "bottom-10 left-1/4"
-  }
+    position: "bottom-32 right-32"
+  },
+  // Centered at the bottom
+  // {
+  //   value: "...",
+  //   label: "...",
+  //   icon: "...",
+  //   color: "...",
+  //   position: "bottom-10 left-1/2 -translate-x-1/2"
+  // },
 ];
 
 const floatVariants = {
