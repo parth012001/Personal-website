@@ -6,7 +6,22 @@ import { useState, useEffect } from 'react';
 
 const KalyxaShowcase = () => {
   const [mounted, setMounted] = useState(false);
+  const [currentIos, setCurrentIos] = useState(0);
+
+  const iosImages = [
+    { src: '/kalyxa-images/kalyxa-iphone.jpg', alt: 'Kalyxa iPhone App Screenshot' },
+    { src: '/kalyxa-images/wardrobe.PNG', alt: 'Kalyxa Virtual Wardrobe Screenshot' },
+  ];
+
   useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    if (!mounted) return;
+    const interval = setInterval(() => {
+      setCurrentIos((prev) => (prev + 1) % iosImages.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [mounted, iosImages.length]);
+
   if (!mounted) return null;
 
   const fadeInUp = {
@@ -258,45 +273,43 @@ const KalyxaShowcase = () => {
             className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-3xl p-12"
           >
             <h3 className="text-3xl font-bold text-center mb-16">iOS Application</h3>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Daily OOTD */}
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                <h4 className="text-2xl font-bold mb-4">Daily OOTD</h4>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Built with SwiftUI and Core ML, the OOTD feature uses on-device machine learning to provide 
-                  personalized outfit recommendations. The system processes user preferences, weather data, and 
-                  calendar events to generate context-aware suggestions.
-                </p>
-                <div className="h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center">
-                  <p className="text-gray-500 dark:text-gray-400">OOTD Feature Preview</p>
+            <div className="flex flex-col md:flex-row gap-12 items-center">
+              {/* Rotating Portrait Image in Phone Frame */}
+              <div className="flex-shrink-0 flex items-center justify-center w-full md:w-auto">
+                <div className="relative w-36 h-72 md:w-44 md:h-[420px] bg-white border-4 border-gray-200 dark:border-gray-700 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden">
+                  <motion.div
+                    key={iosImages[currentIos].src}
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -40 }}
+                    transition={{ duration: 0.6 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <Image
+                      src={iosImages[currentIos].src}
+                      alt={iosImages[currentIos].alt}
+                      fill
+                      className="object-contain rounded-2xl"
+                      sizes="(max-width: 768px) 144px, 176px"
+                    />
+                  </motion.div>
                 </div>
-              </motion.div>
-
-              {/* Virtual Wardrobe */}
-              <motion.div
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                <h4 className="text-2xl font-bold mb-4">Virtual Wardrobe</h4>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Implemented using Vision framework and Core ML for image recognition. The system automatically 
-                  categorizes clothing items, creates outfit combinations, and tracks usage patterns. Features 
-                  include AR try-on and style matching algorithms.
-                </p>
-                <div className="h-64 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center">
-                  <p className="text-gray-500 dark:text-gray-400">Virtual Wardrobe Preview</p>
+              </div>
+              {/* Short Text on the right, vertically centered */}
+              <div className="flex-1 flex flex-col justify-center space-y-8 min-h-[300px] md:min-h-[420px]">
+                <div>
+                  <h4 className="text-2xl font-bold mb-2">Daily OOTD</h4>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Get a new outfit suggestion every day, personalized to your style and weather.
+                  </p>
                 </div>
-              </motion.div>
+                <div>
+                  <h4 className="text-2xl font-bold mb-2">Virtual Wardrobe</h4>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    Digitize your closet, create outfits, and track your style—all in one app.
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
