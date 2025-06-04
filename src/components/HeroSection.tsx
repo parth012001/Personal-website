@@ -62,42 +62,54 @@ const stats = [
     value: "1",
     label: "Company Founded",
     icon: "🚀",
-    color: "from-blue-500 to-blue-600",
+    color: "bg-blue-100/80 dark:bg-blue-900/70",
+    textColor: "text-blue-700 dark:text-blue-200",
+    grad: "from-blue-500 to-blue-600",
     position: "top-24 left-32"
   },
   {
     value: "180+",
     label: "Active Users",
     icon: "👥",
-    color: "from-purple-500 to-purple-600",
+    color: "bg-purple-100/80 dark:bg-purple-900/70",
+    textColor: "text-purple-700 dark:text-purple-200",
+    grad: "from-purple-500 to-purple-600",
     position: "top-24 right-32"
   },
   {
     value: "Boeing",
     label: "Worked on a UAV with Boeing",
     icon: "🛩️",
-    color: "from-blue-400 to-blue-700",
+    color: "bg-blue-200/80 dark:bg-blue-800/70",
+    textColor: "text-blue-800 dark:text-blue-100",
+    grad: "from-blue-400 to-blue-700",
     position: "top-1/2 -translate-y-1/2 left-16"
   },
   {
     value: "9",
     label: "Projects Shipped",
     icon: "📦",
-    color: "from-orange-500 to-orange-600",
+    color: "bg-orange-100/80 dark:bg-orange-900/70",
+    textColor: "text-orange-700 dark:text-orange-200",
+    grad: "from-orange-500 to-orange-600",
     position: "top-1/2 -translate-y-1/2 right-16"
   },
   {
     value: "6",
     label: "Websites Created (with amazing UI/UX)",
     icon: "🎨",
-    color: "from-pink-500 to-pink-600",
+    color: "bg-pink-100/80 dark:bg-pink-900/70",
+    textColor: "text-pink-700 dark:text-pink-200",
+    grad: "from-pink-500 to-pink-600",
     position: "bottom-32 left-32"
   },
   {
     value: "4",
     label: "Products Solving Real Problems",
     icon: "💡",
-    color: "from-yellow-400 to-yellow-600",
+    color: "bg-yellow-100/80 dark:bg-yellow-900/70",
+    textColor: "text-yellow-700 dark:text-yellow-200",
+    grad: "from-yellow-400 to-yellow-600",
     position: "bottom-32 right-32"
   },
   // Centered at the bottom
@@ -142,17 +154,17 @@ const HeroSection = () => {
             variants={floatVariants}
             animate="animate"
             initial={false}
-            className={`absolute ${stat.position} bg-white dark:bg-gray-800 rounded-xl p-2 shadow-lg backdrop-blur-sm min-w-[120px] max-w-xs
-              transform hover:scale-105 transition-transform duration-300 pointer-events-auto`}
-            style={{zIndex: 2}}
+            className={`absolute ${stat.position} ${stat.color} ${stat.textColor} rounded-xl p-2 shadow-lg backdrop-blur-md min-w-[120px] max-w-xs
+              transform hover:scale-105 transition-transform duration-300 pointer-events-auto border border-white/30 dark:border-white/10`}
+            style={{zIndex: 2, opacity: 0.85}}
           >
             <div className="flex items-center gap-2">
               <span className="text-lg">{stat.icon}</span>
               <div>
-                <div className={`text-lg font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                <div className={`text-lg font-bold bg-gradient-to-r ${stat.grad} bg-clip-text text-transparent`}>
                   {stat.value}
                 </div>
-                <div className="text-xs text-gray-600 dark:text-gray-300">
+                <div className="text-xs">
                   {stat.label}
                 </div>
               </div>
