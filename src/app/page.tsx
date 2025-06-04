@@ -1,28 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroSection from '../components/HeroSection';
+import KalyxaShowcase from '../components/KalyxaShowcase';
+import BoeingShowcase from '../components/BoeingShowcase';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            Parth Ahir
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Software Engineer | Tech Founder at Kalyxa
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Link href="#experience" className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              View Experience
-            </Link>
-            <Link href="#projects" className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-gray-900 transition">
-              See Projects
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+      <KalyxaShowcase />
+      <BoeingShowcase />
 
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-white dark:bg-gray-900">
