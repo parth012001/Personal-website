@@ -25,7 +25,7 @@ const KalyxaShowcase = () => {
     if (!mounted) return;
     const interval = setInterval(() => {
       setCurrentIos((prev) => (prev + 1) % iosImages.length);
-    }, 3500);
+    }, 5000);
     return () => clearInterval(interval);
   }, [mounted, iosImages.length]);
 
@@ -34,13 +34,13 @@ const KalyxaShowcase = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.8 }
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.3
       }
     }
   };
@@ -286,17 +286,21 @@ const KalyxaShowcase = () => {
                 <div className="relative w-48 h-[400px] md:w-56 md:h-[440px] bg-white border-4 border-gray-200 dark:border-gray-700 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden">
                   <motion.div
                     key={iosImages[currentIos].src}
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -40 }}
-                    transition={{ duration: 0.6 }}
+                    initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.98, x: -10 }}
+                    transition={{ 
+                      duration: 1.2,
+                      ease: "easeInOut",
+                      opacity: { duration: 0.8 }
+                    }}
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     <Image
                       src={iosImages[currentIos].src}
                       alt={iosImages[currentIos].alt}
                       fill
-                      className="object-contain rounded-2xl"
+                      className="object-contain rounded-2xl transition-opacity duration-1000"
                       sizes="(max-width: 768px) 144px, 176px"
                     />
                   </motion.div>

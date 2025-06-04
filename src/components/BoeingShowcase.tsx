@@ -82,9 +82,13 @@ const BoeingShowcase = () => {
               className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-700/20 z-10" />
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">Team Photo Placeholder</p>
-              </div>
+              <Image
+                src="/kalyxa-images/Boeing/teampic.jpg"
+                alt="Boeing UAV Team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
             </motion.div>
           </div>
         </motion.div>
@@ -184,15 +188,23 @@ const BoeingShowcase = () => {
           >
             <div className="relative h-[300px] rounded-xl overflow-hidden shadow-lg">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-700/20 z-10" />
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">Drone Image 1</p>
-              </div>
+              <Image
+                src="/kalyxa-images/Boeing/drone1.jpg"
+                alt="Boeing UAV Drone 1"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 300px"
+              />
             </div>
             <div className="relative h-[300px] rounded-xl overflow-hidden shadow-lg">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-700/20 z-10" />
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">Drone Image 2</p>
-              </div>
+              <Image
+                src="/kalyxa-images/Boeing/drone2.jpg"
+                alt="Boeing UAV Drone 2"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 300px"
+              />
             </div>
           </motion.div>
         </motion.div>
