@@ -57,14 +57,100 @@ const techStack = [
   }
 ];
 
+const stats = [
+  {
+    value: "1",
+    label: "Company Founded",
+    icon: "🚀",
+    color: "from-blue-500 to-blue-600",
+    position: "top-10 left-10"
+  },
+  {
+    value: "180+",
+    label: "Active Users",
+    icon: "👥",
+    color: "from-purple-500 to-purple-600",
+    position: "top-20 right-16"
+  },
+  {
+    value: "9",
+    label: "Projects Shipped",
+    icon: "📦",
+    color: "from-orange-500 to-orange-600",
+    position: "bottom-10 right-24"
+  },
+  {
+    value: "Boeing",
+    label: "Worked on a UAV with Boeing",
+    icon: "🛩️",
+    color: "from-blue-400 to-blue-700",
+    position: "top-1/2 left-4"
+  },
+  {
+    value: "6",
+    label: "Websites Created (Best UI/UX)",
+    icon: "🎨",
+    color: "from-pink-500 to-pink-600",
+    position: "top-1/3 right-4"
+  },
+  {
+    value: "4",
+    label: "Products Solving Real Problems",
+    icon: "💡",
+    color: "from-yellow-400 to-yellow-600",
+    position: "bottom-10 left-1/4"
+  }
+];
+
+const floatVariants = {
+  animate: (i: number) => ({
+    y: [0, -8, 0, 8, 0],
+    x: [0, 4, 0, -4, 0],
+    transition: {
+      duration: 6 + i,
+      repeat: Infinity,
+      ease: 'easeInOut',
+      delay: i * 0.2
+    }
+  })
+};
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-200 dark:bg-blue-900 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-200 dark:bg-purple-900 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 dark:bg-pink-900 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+
+      {/* Floating Stats */}
+      <div className="absolute inset-0 overflow-visible pointer-events-none">
+        {stats.map((stat, index) => (
+          <motion.div
+            key={stat.label}
+            custom={index}
+            variants={floatVariants}
+            animate="animate"
+            initial={false}
+            className={`absolute ${stat.position} bg-white dark:bg-gray-800 rounded-xl p-2 shadow-lg backdrop-blur-sm min-w-[120px] max-w-xs
+              transform hover:scale-105 transition-transform duration-300 pointer-events-auto`}
+            style={{zIndex: 2}}
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-lg">{stat.icon}</span>
+              <div>
+                <div className={`text-lg font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                  {stat.value}
+                </div>
+                <div className="text-xs text-gray-600 dark:text-gray-300">
+                  {stat.label}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       {/* Main Content */}
@@ -102,13 +188,13 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
             Parth Ahir
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-4">
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
             Software Engineer
           </p>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
             Tech Founder at Kalyxa
           </p>
         </motion.div>
@@ -143,7 +229,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-12"
         >
-          <p className="text-gray-400 text-sm mb-6 tracking-wider uppercase font-medium">Tech Stack</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 tracking-wider uppercase font-medium">Tech Stack</p>
           <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
             {techStack.map((tech, index) => (
               <motion.div
@@ -194,8 +280,8 @@ const HeroSection = () => {
           </Link>
           <Link 
             href="#projects" 
-            className="px-8 py-4 border-2 border-white/20 text-white rounded-lg 
-              hover:bg-white/10 transition-all duration-300 transform hover:scale-105
+            className="px-8 py-4 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-white rounded-lg 
+              hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105
               backdrop-blur-sm"
           >
             See Projects
@@ -213,12 +299,12 @@ const HeroSection = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-gray-300 dark:border-gray-600 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-3 bg-white/50 rounded-full mt-2"
+            className="w-1 h-3 bg-gray-400 dark:bg-gray-500 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>
