@@ -9,8 +9,15 @@ const KalyxaShowcase = () => {
   const [currentIos, setCurrentIos] = useState(0);
 
   const iosImages = [
-    { src: '/kalyxa-images/kalyxa-iphone.jpg', alt: 'Kalyxa iPhone App Screenshot' },
-    { src: '/kalyxa-images/wardrobe.PNG', alt: 'Kalyxa Virtual Wardrobe Screenshot' },
+    { src: '/kalyxa-images/kalyxa-iphone/1.png', alt: 'Kalyxa iPhone Screenshot 1' },
+    { src: '/kalyxa-images/kalyxa-iphone/2.png', alt: 'Kalyxa iPhone Screenshot 2' },
+    { src: '/kalyxa-images/kalyxa-iphone/3.png', alt: 'Kalyxa iPhone Screenshot 3' },
+    { src: '/kalyxa-images/kalyxa-iphone/4.png', alt: 'Kalyxa iPhone Screenshot 4' },
+    { src: '/kalyxa-images/kalyxa-iphone/5.png', alt: 'Kalyxa iPhone Screenshot 5' },
+    { src: '/kalyxa-images/kalyxa-iphone/6.png', alt: 'Kalyxa iPhone Screenshot 6' },
+    { src: '/kalyxa-images/kalyxa-iphone/7.png', alt: 'Kalyxa iPhone Screenshot 7' },
+    { src: '/kalyxa-images/kalyxa-iphone/8.png', alt: 'Kalyxa iPhone Screenshot 8' },
+    { src: '/kalyxa-images/kalyxa-iphone/9.png', alt: 'Kalyxa iPhone Screenshot 9' },
   ];
 
   useEffect(() => { setMounted(true); }, []);
