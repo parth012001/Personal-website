@@ -14,7 +14,7 @@ export default function Home() {
       <EducationSection />
 
       {/* Professional Experience Heading */}
-      <div className="py-12">
+      <div id="professional-experience" className="py-12 scroll-mt-20">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
           Professional Experience
         </h2>
