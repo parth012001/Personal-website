@@ -1,15 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSection from '../components/HeroSection';
+import EducationSection from '../components/EducationSection';
 import KalyxaShowcase from '../components/KalyxaShowcase';
 import BoeingShowcase from '../components/BoeingShowcase';
+import ProjectsShowcase from '../components/ProjectsShowcase';
+import PersonalProjectsSection from '../components/PersonalProjectsSection';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <EducationSection />
       <KalyxaShowcase />
       <BoeingShowcase />
+      <ProjectsShowcase />
+      <PersonalProjectsSection />
 
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-white dark:bg-gray-900">
