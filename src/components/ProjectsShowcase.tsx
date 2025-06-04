@@ -158,7 +158,7 @@ const ProjectsShowcase = () => {
             className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
           >
             <div className="relative h-[400px] overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-teal-500/20 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500/14 to-teal-500/14 z-10" />
               <motion.div
                 key={elevatrImages[currentElevatrIndex].src}
                 initial={{ opacity: 0, scale: 0.95, x: 20 }}
