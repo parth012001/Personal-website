@@ -25,7 +25,9 @@ export default function Home() {
 
       <KalyxaShowcase />
       <BoeingShowcase />
-      <ProjectsShowcase />
+      <div id="featured-projects" className="scroll-mt-20">
+        <ProjectsShowcase />
+      </div>
       <PersonalProjectsSection />
 
       {/* Leadership Section */}
