@@ -6,7 +6,8 @@ import { useState, useEffect } from 'react';
 
 const ProjectsShowcase = () => {
   const [mounted, setMounted] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentApplyFlowIndex, setCurrentApplyFlowIndex] = useState(0);
+  const [currentElevatrIndex, setCurrentElevatrIndex] = useState(0);
 
   // Simulated image arrays for each project
   const applyFlowImages = [
@@ -18,22 +19,32 @@ const ProjectsShowcase = () => {
   ];
 
   const elevatrImages = [
-    '/placeholder-elevatr-1.jpg',
-    '/placeholder-elevatr-2.jpg',
-    '/placeholder-elevatr-3.jpg',
-    '/placeholder-elevatr-4.jpg',
-    '/placeholder-elevatr-5.jpg',
+    { src: '/Elevtr-pictures/1.png', alt: 'Elevatr Screenshot 1' },
+    { src: '/Elevtr-pictures/2.png', alt: 'Elevatr Screenshot 2' },
+    { src: '/Elevtr-pictures/3.png', alt: 'Elevatr Screenshot 3' },
+    { src: '/Elevtr-pictures/4.png', alt: 'Elevatr Screenshot 4' },
+    { src: '/Elevtr-pictures/5.png', alt: 'Elevatr Screenshot 5' },
+    { src: '/Elevtr-pictures/6.png', alt: 'Elevatr Screenshot 6' },
+    { src: '/Elevtr-pictures/7.png', alt: 'Elevatr Screenshot 7' },
+    { src: '/Elevtr-pictures/8.png', alt: 'Elevatr Screenshot 8' },
   ];
 
   useEffect(() => { setMounted(true); }, []);
   useEffect(() => {
     if (!mounted) return;
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5);
-    }, 5000); // Change image every 5 seconds
+    const applyFlowInterval = setInterval(() => {
+      setCurrentApplyFlowIndex((prevIndex) => (prevIndex + 1) % applyFlowImages.length);
+    }, 5000);
 
-    return () => clearInterval(interval);
-  }, [mounted]);
+    const elevatrInterval = setInterval(() => {
+      setCurrentElevatrIndex((prevIndex) => (prevIndex + 1) % elevatrImages.length);
+    }, 5000);
+
+    return () => {
+      clearInterval(applyFlowInterval);
+      clearInterval(elevatrInterval);
+    };
+  }, [mounted, applyFlowImages.length, elevatrImages.length]);
 
   if (!mounted) return null;
 
@@ -69,7 +80,7 @@ const ProjectsShowcase = () => {
             <div className="relative h-[400px] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 z-10" />
               <motion.div
-                key={applyFlowImages[currentImageIndex].src}
+                key={applyFlowImages[currentApplyFlowIndex].src}
                 initial={{ opacity: 0, scale: 0.95, x: 20 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 exit={{ opacity: 0, scale: 0.98, x: -10 }}
@@ -81,8 +92,8 @@ const ProjectsShowcase = () => {
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <Image
-                  src={applyFlowImages[currentImageIndex].src}
-                  alt={applyFlowImages[currentImageIndex].alt}
+                  src={applyFlowImages[currentApplyFlowIndex].src}
+                  alt={applyFlowImages[currentApplyFlowIndex].alt}
                   fill
                   className="object-contain rounded-2xl transition-opacity duration-1000"
                   sizes="(max-width: 768px) 100vw, 600px"
@@ -148,9 +159,26 @@ const ProjectsShowcase = () => {
           >
             <div className="relative h-[400px] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-teal-500/20 z-10" />
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">Elevatr Screenshot {currentImageIndex + 1}</p>
-              </div>
+              <motion.div
+                key={elevatrImages[currentElevatrIndex].src}
+                initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.98, x: -10 }}
+                transition={{ 
+                  duration: 1.2,
+                  ease: "easeInOut",
+                  opacity: { duration: 0.8 }
+                }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <Image
+                  src={elevatrImages[currentElevatrIndex].src}
+                  alt={elevatrImages[currentElevatrIndex].alt}
+                  fill
+                  className="object-contain rounded-2xl transition-opacity duration-1000"
+                  sizes="(max-width: 768px) 100vw, 600px"
+                />
+              </motion.div>
             </div>
             <div className="p-8">
               <div className="flex items-center gap-4 mb-6">
