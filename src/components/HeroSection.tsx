@@ -208,7 +208,15 @@ const HeroSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+          <h1 className="flex items-center justify-center gap-4 text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+            <Image
+              src="/penn_stateLOGO.png"
+              alt="Penn State Logo"
+              width={72}
+              height={72}
+              className="inline-block w-16 h-16 md:w-20 md:h-20 object-contain rounded"
+              priority
+            />
             Parth Ahir
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-4">
