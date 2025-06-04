@@ -67,7 +67,7 @@ const ProjectsShowcase = () => {
             className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
           >
             <div className="relative h-[400px] overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 z-10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 z-10" />
               <motion.div
                 key={applyFlowImages[currentImageIndex].src}
                 initial={{ opacity: 0, scale: 0.95, x: 20 }}
