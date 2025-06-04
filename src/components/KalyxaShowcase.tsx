@@ -2,8 +2,13 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const KalyxaShowcase = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+  if (!mounted) return null;
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -166,8 +171,16 @@ const KalyxaShowcase = () => {
                 variants={fadeInUp}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
               >
-                <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                  <p className="text-gray-500 dark:text-gray-400">Service Seeker View</p>
+                <div className="flex items-center justify-center">
+                  <div className="relative w-full h-48 md:h-56">
+                    <Image
+                      src="/kalyxa-images/kalyxa-user.png"
+                      alt="Kalyxa Service Seeker Screenshot"
+                      fill
+                      className="object-cover rounded-lg shadow border border-gray-100 dark:border-gray-800"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h4 className="text-xl font-bold mb-4">For Service Seekers</h4>
@@ -185,8 +198,16 @@ const KalyxaShowcase = () => {
                 variants={fadeInUp}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
               >
-                <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                  <p className="text-gray-500 dark:text-gray-400">Stylist View</p>
+                <div className="flex items-center justify-center">
+                  <div className="relative w-full h-48 md:h-56">
+                    <Image
+                      src="/kalyxa-images/kalyxa-stylist.png"
+                      alt="Kalyxa Stylist Screenshot"
+                      fill
+                      className="object-cover rounded-lg shadow border border-gray-100 dark:border-gray-800"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h4 className="text-xl font-bold mb-4">For Stylists</h4>
@@ -204,8 +225,16 @@ const KalyxaShowcase = () => {
                 variants={fadeInUp}
                 className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
               >
-                <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                  <p className="text-gray-500 dark:text-gray-400">Admin View</p>
+                <div className="flex items-center justify-center">
+                  <div className="relative w-full h-48 md:h-56">
+                    <Image
+                      src="/kalyxa-images/kalyxa-admin.png"
+                      alt="Kalyxa Admin Screenshot"
+                      fill
+                      className="object-cover rounded-lg shadow border border-gray-100 dark:border-gray-800"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h4 className="text-xl font-bold mb-4">For Administrators</h4>
