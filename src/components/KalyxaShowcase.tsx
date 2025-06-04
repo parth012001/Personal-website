@@ -270,13 +270,13 @@ const KalyxaShowcase = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-3xl p-12"
+            className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-3xl px-4 py-8 md:px-8 md:py-10 max-w-4xl mx-auto min-h-[500px] flex flex-col justify-center"
           >
             <h3 className="text-3xl font-bold text-center mb-16">iOS Application</h3>
             <div className="flex flex-col md:flex-row gap-12 items-center">
               {/* Rotating Portrait Image in Phone Frame */}
-              <div className="flex-shrink-0 flex items-center justify-center w-full md:w-auto">
-                <div className="relative w-36 h-72 md:w-44 md:h-[420px] bg-white border-4 border-gray-200 dark:border-gray-700 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden">
+              <div className="flex-shrink-0 flex items-center justify-center w-full md:w-[40%]">
+                <div className="relative w-48 h-[400px] md:w-56 md:h-[440px] bg-white border-4 border-gray-200 dark:border-gray-700 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden">
                   <motion.div
                     key={iosImages[currentIos].src}
                     initial={{ opacity: 0, x: 40 }}
@@ -296,7 +296,7 @@ const KalyxaShowcase = () => {
                 </div>
               </div>
               {/* Short Text on the right, vertically centered */}
-              <div className="flex-1 flex flex-col justify-center space-y-8 min-h-[300px] md:min-h-[420px]">
+              <div className="flex-1 flex flex-col justify-center space-y-8 min-h-[300px] md:min-h-[440px]">
                 <div>
                   <h4 className="text-2xl font-bold mb-2">Daily OOTD</h4>
                   <p className="text-gray-600 dark:text-gray-300">
