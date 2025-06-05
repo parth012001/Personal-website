@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -15,14 +18,25 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-            PA
+          <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white flex items-center">
+            <Image
+              src="/signature.png"
+              alt="Signature Logo"
+              width={48}
+              height={32}
+              className="object-contain h-8 w-auto"
+              priority
+            />
           </Link>
           
           <div className="hidden md:flex space-x-8">
