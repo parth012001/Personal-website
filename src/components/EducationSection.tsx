@@ -48,7 +48,6 @@ const EducationSection = () => {
                   <span className="inline-flex items-center px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 text-xs font-semibold rounded-full border border-blue-200 dark:border-blue-800">
                     Top 25 CS Program
                   </span>
-                  <a href="https://bulletins.psu.edu/undergraduate/colleges/engineering/computer-science-bs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-300 underline text-xs font-medium hover:text-blue-800 ml-1">Learn More</a>
                 </div>
               </div>
             </div>
@@ -93,6 +92,11 @@ const EducationSection = () => {
                 <h3 className="text-2xl font-extrabold mb-1">Beta University</h3>
                 <p className="text-gray-600 dark:text-gray-300 font-medium">Pre-Accelerator Program</p>
                 <p className="text-gray-500 dark:text-gray-400">Silicon Valley, CA</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="inline-flex items-center px-2 py-0.5 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-200 text-xs font-semibold rounded-full border border-purple-200 dark:border-purple-800">
+                    #1 Pre-Accelerator in Silicon Valley
+                  </span>
+                </div>
               </div>
             </div>
             <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
