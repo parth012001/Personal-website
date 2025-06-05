@@ -31,42 +31,36 @@ const EducationSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative flex flex-col justify-between bg-white/80 dark:bg-gray-800/80 rounded-3xl shadow-2xl border border-blue-100 dark:border-blue-900 backdrop-blur-lg overflow-hidden min-h-[540px] p-10"
+            className="relative flex flex-col justify-between bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 overflow-hidden min-h-[480px] p-8"
           >
-            {/* Top 25 Badge Floating */}
-            <span className="absolute top-6 right-6 z-10 px-4 py-1 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-xs font-bold rounded-full shadow animate-pulse">
-              Top 25 CS Program
-            </span>
-            {/* PSU Logo and ABET Badge */}
-            <div className="flex items-center gap-6 mb-8">
-              <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center shadow-lg border-2 border-white dark:border-blue-800">
-                <Image src="/penn_stateLOGO.png" alt="Penn State Logo" width={64} height={64} className="object-contain w-16 h-16" priority />
+            <div className="flex items-center gap-6 mb-6">
+              <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center shadow border border-white dark:border-blue-800">
+                <Image src="/penn_stateLOGO.png" alt="Penn State Logo" width={48} height={48} className="object-contain w-12 h-12" priority />
               </div>
               <div>
-                <h3 className="text-3xl font-extrabold mb-1">The Pennsylvania State University</h3>
+                <h3 className="text-2xl font-extrabold mb-1">The Pennsylvania State University</h3>
                 <p className="text-gray-600 dark:text-gray-300 font-medium">Bachelor of Science in Computer Science</p>
                 <p className="text-gray-500 dark:text-gray-400">University Park, PA</p>
-                <div className="mt-2 flex items-center gap-2">
-                  <span className="inline-flex items-center px-3 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 text-xs font-semibold rounded-full border border-green-200 dark:border-green-800 shadow-sm">
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="inline-flex items-center px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 text-xs font-semibold rounded-full border border-green-200 dark:border-green-800">
                     ABET Accredited
                   </span>
-                  <a href="https://bulletins.psu.edu/undergraduate/colleges/engineering/computer-science-bs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-300 underline text-xs font-medium hover:text-blue-800 ml-2">Learn More</a>
+                  <span className="inline-flex items-center px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 text-xs font-semibold rounded-full border border-blue-200 dark:border-blue-800">
+                    Top 25 CS Program
+                  </span>
+                  <a href="https://bulletins.psu.edu/undergraduate/colleges/engineering/computer-science-bs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-300 underline text-xs font-medium hover:text-blue-800 ml-1">Learn More</a>
                 </div>
               </div>
             </div>
-            {/* What I Learned & SDE Impact */}
-            <div className="mb-8">
-              <p className="text-lg text-gray-800 dark:text-gray-100 font-semibold mb-2">
-                What I Learned & How It Made Me a Strong SDE
-              </p>
-              <p className="text-gray-600 dark:text-gray-300 text-base">
+            <div className="mb-4">
+              <h4 className="font-semibold text-base mb-1 text-gray-900 dark:text-white">What I Learned & How It Made Me a Strong SDE</h4>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Gained deep expertise in algorithms, software engineering, and team collaboration. Built scalable systems, solved real-world problems, and developed the adaptability and rigor essential for high-impact software development.
               </p>
             </div>
-            {/* Curriculum Highlights */}
-            <div className="mb-2">
-              <h4 className="font-semibold text-lg mb-3 text-gray-900 dark:text-white">Curriculum Highlights:</h4>
-              <div className="flex flex-wrap gap-3">
+            <div>
+              <h4 className="font-semibold text-base mb-2 text-gray-900 dark:text-white">Curriculum Highlights:</h4>
+              <div className="flex flex-wrap gap-2">
                 {["Software Engineering", "Algorithms & Data Structures", "AI & Machine Learning", "Cybersecurity", "Database Systems", "Operating Systems", "Team Projects", "Cloud Computing", "Web & Mobile Development"].map((skill, index) => (
                   <motion.span
                     key={skill}
@@ -74,7 +68,7 @@ const EducationSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-100 rounded-full text-sm shadow-md hover:scale-105 transition-transform cursor-default"
+                    className="px-3 py-1 bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-100 rounded-full text-xs shadow-sm hover:scale-105 transition-transform cursor-default border border-blue-100 dark:border-blue-800"
                   >
                     {skill}
                   </motion.span>
@@ -89,24 +83,24 @@ const EducationSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col justify-between bg-white/80 dark:bg-gray-800/80 rounded-3xl shadow-2xl border border-purple-100 dark:border-purple-900 backdrop-blur-lg overflow-hidden min-h-[540px] p-10"
+            className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 overflow-hidden min-h-[480px] p-8"
           >
-            <div className="flex items-center gap-6 mb-8">
-              <div className="w-20 h-20 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center shadow-lg border-2 border-white dark:border-purple-800">
-                <div className="text-2xl font-bold text-purple-600 dark:text-purple-300">BU</div>
+            <div className="flex items-center gap-6 mb-6">
+              <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center shadow border border-white dark:border-purple-800">
+                <div className="text-xl font-bold text-purple-600 dark:text-purple-300">BU</div>
               </div>
               <div>
-                <h3 className="text-3xl font-extrabold mb-1">Beta University</h3>
+                <h3 className="text-2xl font-extrabold mb-1">Beta University</h3>
                 <p className="text-gray-600 dark:text-gray-300 font-medium">Pre-Accelerator Program</p>
                 <p className="text-gray-500 dark:text-gray-400">Silicon Valley, CA</p>
               </div>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-8 text-base">
+            <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
               Selected for the prestigious Silicon Valley-based pre-accelerator program, joining a community of innovative founders and gaining access to world-class mentorship, investor networks, and entrepreneurial resources.
             </p>
-            <div className="mb-2">
-              <h4 className="font-semibold text-lg mb-3 text-gray-900 dark:text-white">Program Highlights:</h4>
-              <ul className="space-y-3 text-gray-600 dark:text-gray-300 mb-4">
+            <div>
+              <h4 className="font-semibold text-base mb-2 text-gray-900 dark:text-white">Program Highlights:</h4>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-300 mb-2 text-sm">
                 <li className="flex items-center">
                   <span className="text-purple-600 mr-2">•</span>
                   8-week intensive fundraising program
@@ -124,7 +118,7 @@ const EducationSection = () => {
                   Connection to $20B+ portfolio companies
                 </li>
               </ul>
-              <div className="flex flex-wrap gap-3 mt-2">
+              <div className="flex flex-wrap gap-2 mt-1">
                 {["Venture Capital", "Startup Growth", "Pitch Development", "Investor Relations"].map((skill, index) => (
                   <motion.span
                     key={skill}
@@ -132,7 +126,7 @@ const EducationSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="px-4 py-2 bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900 dark:to-purple-800 text-purple-800 dark:text-purple-100 rounded-full text-sm shadow-md hover:scale-105 transition-transform cursor-default"
+                    className="px-3 py-1 bg-purple-50 dark:bg-purple-900 text-purple-700 dark:text-purple-100 rounded-full text-xs shadow-sm hover:scale-105 transition-transform cursor-default border border-purple-100 dark:border-purple-800"
                   >
                     {skill}
                   </motion.span>
