@@ -63,6 +63,20 @@ const KalyxaShowcase = () => {
             Revolutionizing personal styling through AI-powered technology. A three-sided marketplace connecting 
             professional stylists with clients, powered by cutting-edge AI for personalized fashion recommendations.
           </p>
+          {/* Visit Website Button */}
+          <div className="mt-8 flex justify-center">
+            <a
+              href="https://www.kalyxa.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full shadow-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 text-lg group"
+            >
+              Visit Website
+              <svg className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </motion.div>
 
         {/* Technical Achievement Highlights */}
@@ -294,7 +308,21 @@ const KalyxaShowcase = () => {
             transition={{ duration: 0.8 }}
             className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-3xl px-4 py-8 md:px-8 md:py-10 max-w-4xl mx-auto min-h-[500px] flex flex-col justify-center"
           >
-            <h3 className="text-3xl font-bold text-center mb-16">iOS Application</h3>
+            <h3 className="text-3xl font-bold text-center mb-6">iOS Application</h3>
+            {/* App Store Button */}
+            <div className="flex justify-center mb-10">
+              <a
+                href="https://apps.apple.com/us/app/kalyxa/id6738635909"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:from-purple-600 hover:to-blue-600 transition-all duration-300 text-lg group"
+              >
+                View on App Store
+                <svg className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
             <div className="flex flex-col md:flex-row gap-12 items-center">
               {/* Rotating Portrait Image in Phone Frame */}
               <div className="flex-shrink-0 flex items-center justify-center w-full md:w-[40%]">
