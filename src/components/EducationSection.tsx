@@ -61,7 +61,7 @@ const EducationSection = () => {
             <div>
               <h4 className="font-semibold text-base mb-2 text-gray-900 dark:text-white">Curriculum Highlights:</h4>
               <div className="flex flex-wrap gap-2">
-                {["Software Engineering", "Algorithms & Data Structures", "AI & Machine Learning", "Cybersecurity", "Database Systems", "Operating Systems", "Team Projects", "Cloud Computing", "Web & Mobile Development"].map((skill, index) => (
+                {["Software Engineering", "Algorithms & Data Structures", "AI & Machine Learning", "Database Systems", "Operating Systems", "Team Projects", "Cloud Computing", "Web & Mobile Development"].map((skill, index) => (
                   <motion.span
                     key={skill}
                     initial={{ opacity: 0, scale: 0.8 }}

@@ -63,7 +63,7 @@ const PersonalProjectsSection = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto items-stretch">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -73,9 +73,9 @@ const PersonalProjectsSection = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="group"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02]">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] min-h-[340px] flex flex-col justify-between">
                 <div className={`h-2 bg-gradient-to-r ${project.color}`} />
-                <div className="p-8">
+                <div className="p-8 flex flex-col flex-1 justify-between">
                   <div className="flex items-center gap-4 mb-6">
                     <div className={`w-14 h-14 ${project.bgColor} rounded-xl flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110`}>
                       <project.icon className={`w-7 h-7 ${project.textColor}`} />
@@ -90,10 +90,10 @@ const PersonalProjectsSection = () => {
                       </div>
                     </div>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 flex-1">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 mt-auto">
                     {project.technologies.map((tech, techIndex) => (
                       <motion.span
                         key={tech}
