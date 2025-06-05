@@ -75,8 +75,22 @@ const ProjectsShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden relative"
           >
+            {/* Live Badge */}
+            <a
+              href="https://applyflow-thq2.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-1.5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-full shadow-md border border-green-200 dark:border-green-800 hover:scale-105 transition-transform group"
+              title="View Live Project"
+            >
+              <span className="inline-block w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-green-400/40" />
+              <span className="text-green-700 dark:text-green-300 font-semibold text-sm tracking-wide">Live</span>
+              <svg className="w-4 h-4 text-green-500 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+              </svg>
+            </a>
             <div className="relative h-[400px] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 z-10" />
               <motion.div
@@ -155,8 +169,22 @@ const ProjectsShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden relative"
           >
+            {/* Live Badge */}
+            <a
+              href="https://elevatr-murex.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-4 right-4 z-20 flex items-center gap-2 px-4 py-1.5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-full shadow-md border border-green-200 dark:border-green-800 hover:scale-105 transition-transform group"
+              title="View Live Project"
+            >
+              <span className="inline-block w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-green-400/40" />
+              <span className="text-green-700 dark:text-green-300 font-semibold text-sm tracking-wide">Live</span>
+              <svg className="w-4 h-4 text-green-500 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+              </svg>
+            </a>
             <div className="relative h-[400px] overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/14 to-teal-500/14 z-10" />
               <motion.div

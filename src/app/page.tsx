@@ -4,6 +4,7 @@ import KalyxaShowcase from '@/components/KalyxaShowcase';
 import BoeingShowcase from '@/components/BoeingShowcase';
 import ProjectsShowcase from '@/components/ProjectsShowcase';
 import PersonalProjectsSection from '@/components/PersonalProjectsSection';
+import ClientOnly from '@/components/ClientOnly';
 
 export default function Home() {
   return (
@@ -24,7 +25,9 @@ export default function Home() {
       <KalyxaShowcase />
       <BoeingShowcase />
       <div id="featured-projects" className="scroll-mt-20">
-        <ProjectsShowcase />
+        <ClientOnly>
+          <ProjectsShowcase />
+        </ClientOnly>
       </div>
       <PersonalProjectsSection />
 

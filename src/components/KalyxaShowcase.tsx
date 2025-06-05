@@ -178,7 +178,22 @@ const KalyxaShowcase = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
+            {/* Live Badge */}
+            <a
+              href="https://services.kalyxa.io/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-0 right-0 z-20 flex items-center gap-2 px-4 py-1.5 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-full shadow-md border border-green-200 dark:border-green-800 hover:scale-105 transition-transform group mt-4 mr-4"
+              title="View Live Web Platform"
+            >
+              <span className="inline-block w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-green-400/40" />
+              <span className="text-green-700 dark:text-green-300 font-semibold text-sm tracking-wide">Live</span>
+              <svg className="w-4 h-4 text-green-500 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+              </svg>
+            </a>
             <h3 className="text-3xl font-bold text-center mb-16">Web Platform</h3>
             
             <motion.div 
