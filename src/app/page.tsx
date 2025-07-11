@@ -1,16 +1,21 @@
 import HeroSection from '@/components/HeroSection';
+import IndexNavigation from '@/components/IndexNavigation';
 import EducationSection from '@/components/EducationSection';
 import KalyxaShowcase from '@/components/KalyxaShowcase';
 import BoeingShowcase from '@/components/BoeingShowcase';
 import ProjectsShowcase from '@/components/ProjectsShowcase';
 import PersonalProjectsSection from '@/components/PersonalProjectsSection';
+import AgenticAISection from '@/components/AgenticAISection';
 import ClientOnly from '@/components/ClientOnly';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <EducationSection />
+      <IndexNavigation />
+      <div id="education" className="scroll-mt-20">
+        <EducationSection />
+      </div>
 
       {/* Professional Experience Heading */}
       <div id="professional-experience" className="py-12 scroll-mt-20">
@@ -29,10 +34,15 @@ export default function Home() {
           <ProjectsShowcase />
         </ClientOnly>
       </div>
-      <PersonalProjectsSection />
+      <div id="personal-projects" className="scroll-mt-20">
+        <PersonalProjectsSection />
+      </div>
+      <div id="agentic-ai" className="scroll-mt-20">
+        <AgenticAISection />
+      </div>
 
-      {/* Leadership Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+            {/* Leadership Section */}
+      <section id="leadership" className="py-20 bg-white dark:bg-gray-900 scroll-mt-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center">Leadership & Community</h2>
           <div className="max-w-3xl mx-auto">
