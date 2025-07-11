@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 interface NavigationItem {
   id: string;
@@ -74,7 +73,6 @@ const colorClasses = {
 };
 
 export default function IndexNavigation() {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
