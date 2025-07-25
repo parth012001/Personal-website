@@ -33,7 +33,7 @@ const stats = [
     position: "top-1/2 -translate-y-1/2 left-16"
   },
   {
-    value: "9",
+    value: "12+",
     label: "Projects Shipped",
     icon: "📦",
     color: "bg-orange-100/80 dark:bg-orange-900/70",
