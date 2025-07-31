@@ -92,8 +92,8 @@ const HeroSection = () => {
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-200 dark:bg-pink-900 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
 
-      {/* Floating Stats */}
-      <div className="absolute inset-0 overflow-visible pointer-events-none">
+      {/* Floating Stats - Hidden on mobile */}
+      <div className="absolute inset-0 overflow-visible pointer-events-none hidden md:block">
         {stats.map((stat, index) => (
           <motion.div
             key={stat.label}
@@ -176,12 +176,12 @@ const HeroSection = () => {
           </p>
         </motion.div>
 
-        {/* Product Hunt Badge */}
+        {/* Product Hunt Badge - Hidden on mobile */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-12"
+          className="mb-12 hidden md:block"
         >
           <a 
             href="https://www.producthunt.com/products/kalyxa?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_source=badge-kalyxa" 
@@ -241,12 +241,12 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
       
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
