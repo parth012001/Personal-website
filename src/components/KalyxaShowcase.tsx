@@ -66,7 +66,7 @@ const KalyxaShowcase = () => {
           {/* Visit Website Button */}
           <div className="mt-8 flex justify-center">
             <a
-              href="https://www.kalyxa.io"
+              href="https://kalyxa-website.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full shadow-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 text-lg group"
